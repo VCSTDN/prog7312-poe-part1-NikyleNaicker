@@ -1,0 +1,21 @@
+﻿<Window x:Class="PROG3B_2023.Replace"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PROG3B_2023"
+        mc:Ignorable="d"
+        Title="Replace" Height="450" Width="800">
+    <Grid Height="419" VerticalAlignment="Top">
+        <Label Height="35" FontSize="18" Content="Replacing Books Game" Width="200" HorizontalContentAlignment="Center" Margin="296,10,296,0" VerticalAlignment="Top"/>
+        <ProgressBar Height="20" Margin="197,50,0,0" Width="400" x:Name="Progress" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <TextBlock Height="20" Margin="388,50,0,0" Width="25" FontSize="12" VerticalAlignment="Top" HorizontalAlignment="Left" Text="{Binding ElementName=Progress, Path=Value, StringFormat={}{0:0}%}"/>
+        <Canvas Height="280" Width="600" Background="Transparent" AllowDrop="True" Margin="0,82,95,0" VerticalAlignment="Top" HorizontalAlignment="Right" >
+            <ListView Height="280" Width="300" BorderThickness="2" FontSize="16" x:Name="Unsorted" AllowDrop="True" MouseMove="Unsorted_MouseMove" Drop="Unsorted_Drop"/>
+            <ListView Height="280" Width="300" Canvas.Left="300" BorderThickness="2" x:Name="Sorted" AllowDrop="True" Drop="Sorted_Drop" MouseMove="Sorted_MouseMove"/>
+        </Canvas>
+        <Button Content="Load" Height="20" Width="100" Click="Load_Click" Margin="340,389,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Button Content="Mark" Height="20" Width="100" Click="Mark_Click" Margin="597,389,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="btnMark"/>
+        <Button Content="Main Menu" Height="20" Width="100" Click="MainMenu_Click" Margin="97,389,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+    </Grid>
+</Window>
